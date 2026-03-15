@@ -1,18 +1,59 @@
-
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prestau - Trouvez votre mission</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="header">
+        <div class="header-bg">
+            <!-- Utilise une image SVG ou PNG en fond, exemple: background-header.png -->
+            <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                style="position:absolute; top:0; left:0; width:100%; height:340px;">
+                <defs>
+                    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#355E8D" />
+                        <stop offset="100%" stop-color="#4E7DB5" />
+                    </linearGradient>
+                </defs>
+
+                <path fill="url(#headerGradient)" d="
+                            M0,0
+                            L1440,0
+                            L1440,160
+                            C1200,220 1000,120 800,160
+                            C600,200 400,260 200,200
+                            C100,170 50,150 0,170
+                            Z" />
+
+                <!-- couche vague plus claire -->
+                <path fill="#6f97c9" opacity="0.35" d="
+                                                        M0,0
+                                                        L1440,0
+                                                        L1440,120
+                                                        C1200,170 1000,90 800,120
+                                                        C600,150 400,200 200,160
+                                                        C100,140 50,130 0,140
+                                                        Z" />
+            </svg>
+        </div>
         <div class="container">
-            <h1>Prestau</h1>
-            <p>La plateforme qui connecte workers et companies pour des missions flexibles, sans la lourdeur de l'intérim classique.</p>
-            <a href="#cta" class="btn-primary">Rejoindre Prestau</a>
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="#features">Pourquoi Prestau ?</a></li>
+                    <li><a href="#highlights">Fonctionnalités</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="https://prestau.app" target="_blank" class="nav-app-btn">Accéder à l'application</a>
+            </nav>
+            <h1 class="header-title">Prestau</h1>
+            <p class="hero-description">La plateforme qui connecte workers et companies pour des missions
+                flexibles,<br>sans la lourdeur de l'intérim classique.</p>
         </div>
     </header>
 
@@ -36,13 +77,50 @@
         </div>
     </section>
 
+    <section class="highlights">
+        <div class="container">
+            <h2>Les 3 fonctionnalités clés</h2>
+            <div class="highlights-list">
+                <div class="highlight">
+                    <div class="highlight-media">
+                        <!-- Image, screenshot, gif ou vidéo ici -->
+                        <img src="https://via.placeholder.com/320x180?text=Feature+1" alt="Feature 1" />
+                    </div>
+                    <h3>Nom de la fonctionnalité 1</h3>
+                    <p>Description de la fonctionnalité 1.</p>
+                </div>
+                <div class="highlight">
+                    <div class="highlight-media">
+                        <!-- Image, screenshot, gif ou vidéo ici -->
+                        <img src="https://via.placeholder.com/320x180?text=Feature+2" alt="Feature 2" />
+                    </div>
+                    <h3>Nom de la fonctionnalité 2</h3>
+                    <p>Description de la fonctionnalité 2.</p>
+                </div>
+                <div class="highlight">
+                    <div class="highlight-media">
+                        <!-- Image, screenshot, gif ou vidéo ici -->
+                        <img src="https://via.placeholder.com/320x180?text=Feature+3" alt="Feature 3" />
+                    </div>
+                    <h3>Nom de la fonctionnalité 3</h3>
+                    <p>Description de la fonctionnalité 3.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="about" id="about">
         <div class="container">
             <h2>À propos du projet</h2>
             <div class="about-content">
                 <p>
-                    Prestau est né d'une envie de simplifier l'accès aux missions ponctuelles pour tous, en s'inspirant de nos propres galères à trouver des jobs flexibles pendant nos études. L'idée est venue lors d'une discussion entre amis, où chacun partageait ses expériences de recherche de travail temporaire, souvent compliquées et trop formelles. Nous avons voulu créer une plateforme moderne, intuitive et humaine, pour que chacun puisse trouver ou proposer une mission en toute simplicité.<br><br>
-                    Ce projet a été réalisé en mars 2026, et fait partie de notre Portfolio Project pour <a href="https://www.holbertonschool.com/" target="_blank">Holberton School</a>.
+                    Prestau est né d'une envie de simplifier l'accès aux missions ponctuelles pour tous, en s'inspirant
+                    de nos propres galères à trouver des jobs flexibles pendant nos études. L'idée est venue lors d'une
+                    discussion entre amis, où chacun partageait ses expériences de recherche de travail temporaire,
+                    souvent compliquées et trop formelles. Nous avons voulu créer une plateforme moderne, intuitive et
+                    humaine, pour que chacun puisse trouver ou proposer une mission en toute simplicité.<br><br>
+                    Ce projet a été réalisé en mars 2026, et fait partie de notre Portfolio Project pour <a
+                        href="https://www.holbertonschool.com/" target="_blank">Holberton School</a>.
                 </p>
                 <div class="team">
                     <h3>Notre équipe</h3>
@@ -53,21 +131,25 @@
                             <a href="https://github.com/devuser" target="_blank">GitHub</a> |
                             <a href="https://twitter.com/devuser" target="_blank">Twitter</a>
                         </li>
-                        <!-- Ajoute d'autres membres ici si besoin -->
+                        <li>
+                            <strong>Team Member 2</strong><br>
+                            <a href="https://www.linkedin.com/in/member2" target="_blank">LinkedIn</a> |
+                            <a href="https://github.com/member2" target="_blank">GitHub</a> |
+                            <a href="https://twitter.com/member2" target="_blank">Twitter</a>
+                        </li>
+                        <li>
+                            <strong>Team Member 3</strong><br>
+                            <a href="https://www.linkedin.com/in/member3" target="_blank">LinkedIn</a> |
+                            <a href="https://github.com/member3" target="_blank">GitHub</a> |
+                            <a href="https://twitter.com/member3" target="_blank">Twitter</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="repo-link">
-                    <a href="https://github.com/devuser/prestau" target="_blank" class="btn-secondary">Voir le projet sur GitHub</a>
+                    <a href="https://github.com/devuser/prestau" target="_blank" class="btn-secondary">Voir le projet
+                        sur GitHub</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="cta" id="cta">
-        <div class="container">
-            <h2>Prêt à commencer ?</h2>
-            <p>Que vous soyez worker ou company, rejoignez Prestau et trouvez la mission ou le talent qu'il vous faut.</p>
-            <a href="#contact" class="btn-secondary">Contactez-nous</a>
         </div>
     </section>
 
@@ -77,4 +159,5 @@
         </div>
     </footer>
 </body>
+
 </html>
