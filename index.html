@@ -4,55 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prestau - Trouvez votre mission</title>
+    <title>Prestau - Find your mission</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        // Sticky nav-bar on scroll
-        document.addEventListener('DOMContentLoaded', function () {
-            const navBar = document.querySelector('.nav-bar');
-            let lastScroll = 0;
-            window.addEventListener('scroll', function () {
-                const currentScroll = window.scrollY;
-                navBar.classList.add('sticky');
-                // Affiche la nav-bar si l'utilisateur scroll vers le haut
-                if (currentScroll < lastScroll) {
-                    navBar.style.opacity = '1';
-                } else if (navBar.classList.contains('sticky')) {
-                    navBar.style.opacity = '0';
-                }
-                lastScroll = currentScroll;
-            });
-
-            // === CAROUSEL LOGIC ===
-            const cards = document.querySelectorAll('.carousel-card');
-            const leftBtn = document.querySelector('.carousel-arrow.left');
-            const rightBtn = document.querySelector('.carousel-arrow.right');
-            let current = 0;
-
-            function updateCarousel() {
-                cards.forEach((card, i) => {
-                    card.classList.remove('active', 'next', 'prev');
-                });
-                cards[current].classList.add('active');
-                cards[(current + 1) % cards.length].classList.add('next');
-                cards[(current - 1 + cards.length) % cards.length].classList.add('prev');
-            }
-
-            leftBtn.addEventListener('click', () => {
-                current = (current - 1 + cards.length) % cards.length;
-                updateCarousel();
-            });
-            rightBtn.addEventListener('click', () => {
-                current = (current + 1) % cards.length;
-                updateCarousel();
-            });
-            updateCarousel();
-        });
-    </script>
 </head>
 
 <body>
-    <header class="header">
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="#home"><img src="./images/logo-portfolio.jpg" alt="Prestau logo" class="nav-logo"></a>
+            </li>
+            <li><a href="#features" class="nav-link">Why Prestau ?</a></li>
+            <li><a href="#highlights" class="nav-link">Features</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+    </nav>
+    <header class="header" id="home">
         <div class="header-bg">
             <!-- Utilise une image SVG ou PNG en fond, exemple: background-header.png -->
             <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
@@ -85,38 +51,29 @@
             </svg>
         </div>
         <div class="container">
-            <nav class="nav-bar">
-                <ul>
-                    <li><a href="/index.html"><img src="./images/logo-portfolio.jpg" alt="Prestau logo"
-                                class="nav-logo"></a></li>
-                    <li><a href="#features" class="nav-link">Pourquoi Prestau ?</a></li>
-                    <li><a href="#highlights" class="nav-link">Fonctionnalités</a></li>
-                    <li><a href="#about" class="nav-link">À propos</a></li>
-                </ul>
-            </nav>
             <h1 class="header-title">Prestau</h1>
             <p class="hero-description">
-                La solution moderne qui relie talents et entreprises pour des missions flexibles, rapides<br>
-                <span class="highlight-underline">et sans contraintes administratives.</span>
+                The modern solution that connects talents and companies for flexible, fast<br>
+                <span class="highlight-underline">and constraint-free missions.</span>
             </p>
         </div>
     </header>
 
     <section class="features" id="features">
         <div class="container">
-            <h2>Pourquoi Prestau ?</h2>
+            <h2>Why Prestau ?</h2>
             <div class="features-list">
                 <div class="feature">
-                    <h3>Flexibilité</h3>
-                    <p>Choisissez vos missions selon vos disponibilités, sans engagement long terme.</p>
+                    <h3>Flexibility</h3>
+                    <p>Choose your missions according to your availability, without long-term commitment.</p>
                 </div>
                 <div class="feature">
                     <h3>Rapidité</h3>
-                    <p>Les entreprises trouvent rapidement des workers pour leurs besoins ponctuels.</p>
+                    <p>Companies find workers quickly for their occasional needs.</p>
                 </div>
                 <div class="feature">
-                    <h3>Simplicité</h3>
-                    <p>Inscription et mise en relation en quelques clics, sans paperasse inutile.</p>
+                    <h3>Simplicity</h3>
+                    <p>Registration and matching in a few clicks, without unnecessary paperwork.</p>
                 </div>
             </div>
         </div>
@@ -124,27 +81,27 @@
 
     <section class="highlights" id="highlights">
         <div class="container">
-            <h2>Les 3 fonctionnalités clés</h2>
+            <h2>The 3 Key Features</h2>
             <div class="carousel">
                 <button class="carousel-arrow left" aria-label="Précédent">&#8592;</button>
                 <div class="carousel-cards">
                     <div class="carousel-card highlight active">
-                        <h3>Créer une mission</h3>
-                        <p>Une company peut créer une mission en quelques clics.</p>
+                        <h3>Create a mission</h3>
+                        <p>A company can create a mission in a few clicks.</p>
                         <div class="highlight-media">
                             <img src="./images/create-mission.png" alt="Feature 1" />
                         </div>
                     </div>
                     <div class="carousel-card highlight next">
-                        <h3>Gérer ses missions</h3>
-                        <p>Une company peut voir toutes les missions qu'elle a créées.</p>
+                        <h3>Manage your missions</h3>
+                        <p>A company can view all the missions it has created.</p>
                         <div class="highlight-media">
                             <img src="./images/handle-mission.png" alt="Feature 2" />
                         </div>
                     </div>
                     <div class="carousel-card highlight prev">
-                        <h3>Candidater à une mission</h3>
-                        <p>Une personne peut candidater à une mission qu'elle trouve intéressante.</p>
+                        <h3>Apply for a mission</h3>
+                        <p>A person can apply for a mission they find interesting.</p>
                         <div class="highlight-media">
                             <img src="./images/postule-mission.PNG" alt="Feature 3" />
                         </div>
@@ -157,70 +114,68 @@
 
     <section class="about" id="about">
         <div class="container about-flex">
-            <div class="about-media">
-                <!-- Vidéo ou image illustrative -->
-                <div class="about-video">
-                    <img src="./images/about-video-placeholder.jpg" alt="Vidéo Prestau"
-                        style="width:100%;border-radius:32px;">
-                    <div class="about-video-overlay">
-                        <iframe width="560" height="315" src=""
+            <div class="about-content">
+                <h2>About the project</h2>
+                <div class="about-media">
+                    <!-- Vidéo ou image illustrative -->
+                    <div class="about-video">
+                        <iframe src="https://www.youtube.com/embed/hQ9hsOSstAs?si=faHNaIPCad-mpQV9"
                             title="Présentation de Prestau" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
-                        <span class="about-video-label">DÉCOUVRIR PRESTAU EN VIDÉO</span>
                     </div>
                 </div>
-            </div>
-            <div class="about-content">
-                <h2>À propos du projet</h2>
-                <p>
-                    Prestau est né d'une envie de simplifier l'accès aux missions ponctuelles pour tous, en s'inspirant
-                    de nos propres galères à trouver des jobs flexibles pendant nos études. L'idée est venue lors d'une
-                    discussion entre amis, où chacun partageait ses expériences de recherche de travail temporaire,
-                    souvent compliquées et trop formelles. Nous avons voulu créer une plateforme moderne, intuitive et
-                    humaine, pour que chacun puisse trouver ou proposer une mission en toute simplicité.<br><br>
-                    Ce projet a été réalisé en mars 2026, et fait partie de notre Portfolio Project pour <a
-                        href="https://www.holbertonschool.com/" target="_blank">Holberton School</a>.
-                </p>
-                <div class="team">
-                    <h3>Notre équipe</h3>
-                    <div class="team-flex">
-                        <div class="team-photos">
-                            <img src="./images/JulienPP.jpg" alt="Product manager/Developer" class="team-photo">
-                            <img src="./images/aurelie-pp.jpg" alt="Tech Lead/Developer" class="team-photo">
-                            <img src="./images/nico-pp.jpg" alt="Product Owner/Developer" class="team-photo">
-                        </div>
-                        <div class="team-roles">
-                            <div class="team-role">
-                                <span class="team-role-title">Product manager/Developer</span>
-                                <div class="team-links">
-                                    <a href="https://www.linkedin.com/in/julien-girardey-820697252/"
-                                        target="_blank">LinkedIn</a>
-                                    <a href="https://github.com/JulienGirardey" target="_blank">GitHub</a>
-                                </div>
+                <div class="about-infos">
+                    <p class="about-paragraph">
+                        Prestau is the result of two friend's initiative to simplify access to occasional missions for
+                        everyone. Sensitive to the difficulties encountered when searching for flexible jobs, they
+                        imagined a modern, intuitive and human platform, allowing everyone to propose or find a mission
+                        with ease. Our team then took charge of the application's design and development, in order to
+                        bring their vision to life.<br><br>
+                        This project was completed in March 2026 and is part of our Portfolio Project for
+                        <a href="https://www.holbertonschool.com/" target="_blank">Holberton School</a>.
+                    </p>
+                    <div class="team">
+                        <h3>Our team</h3>
+                        <div class="team-flex">
+                            <div class="team-photos">
+                                <img src="./images/JulienPP.jpg" alt="Product manager/Developer" class="team-photo">
+                                <img src="./images/aurelie-pp.jpg" alt="Tech Lead/Developer" class="team-photo">
+                                <img src="./images/nico-pp.jpg" alt="Product Owner/Developer" class="team-photo">
                             </div>
-                            <div class="team-role">
-                                <span class="team-role-title">Product Owner/Developer</span>
-                                <div class="team-links">
-                                    <a href="https://www.linkedin.com/in/aur%C3%A9lie-di-martino-50999a298/"
-                                        target="_blank">LinkedIn</a>
-                                    <a href="https://github.com/adi-mart" target="_blank">GitHub</a>
+                            <div class="team-roles">
+                                <div class="team-role">
+                                    <span class="team-role-title">Product manager/Developer</span>
+                                    <div class="team-links">
+                                        <a href="https://www.linkedin.com/in/julien-girardey-820697252/"
+                                            target="_blank">LinkedIn</a>
+                                        <a href="https://github.com/JulienGirardey" target="_blank">GitHub</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="team-role">
-                                <span class="team-role-title">Tech Lead/Developer</span>
-                                <div class="team-links">
-                                    <a href="https://www.linkedin.com/in/carabet/" target="_blank">LinkedIn</a>
-                                    <a href="https://github.com/NikkoAvardes" target="_blank">GitHub</a>
+                                <div class="team-role">
+                                    <span class="team-role-title">Product Owner/Developer</span>
+                                    <div class="team-links">
+                                        <a href="https://www.linkedin.com/in/aur%C3%A9lie-di-martino-50999a298/"
+                                            target="_blank">LinkedIn</a>
+                                        <a href="https://github.com/adi-mart" target="_blank">GitHub</a>
+                                    </div>
+                                </div>
+                                <div class="team-role">
+                                    <span class="team-role-title">Tech Lead/Developer</span>
+                                    <div class="team-links">
+                                        <a href="https://www.linkedin.com/in/carabet/" target="_blank">LinkedIn</a>
+                                        <a href="https://github.com/NikkoAvardes" target="_blank">GitHub</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="repo-link">
-                    <a href="https://github.com/JulienGirardey/Prestau" target="_blank" class="btn-secondary">Voir le
-                        projet
-                        sur GitHub</a>
+                    <a href="https://github.com/JulienGirardey/Prestau" target="_blank" class="btn-secondary">View
+                        the
+                        project
+                        on GitHub</a>
                 </div>
             </div>
         </div>
@@ -228,9 +183,56 @@
 
     <footer class="footer" id="contact">
         <div class="container">
-            <p>&copy; 2026 Prestau. Tous droits réservés.</p>
+            <p>&copy; 2026 Prestau. All rights reserved.</p>
         </div>
     </footer>
 </body>
+<script>
+    // Sticky nav-bar on scroll
+    document.addEventListener('DOMContentLoaded', function () {
+        // Initial check in case user starts scrolled down
+        let lastScroll = 0;
+        const navBar = document.querySelector('.nav-bar');
+        console.log('navbar: ', navBar);
+        if (!navBar) return;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > lastScroll && currentScroll > 50) {
+                navBar.classList.add('nav-hidden');
+                console.log('navbar: ', navBar);
+
+            } else {
+                navBar.classList.remove('nav-hidden');
+            }
+            lastScroll = currentScroll;
+        });
+    });
+
+    // === CAROUSEL LOGIC ===
+    const cards = document.querySelectorAll('.carousel-card');
+    const leftBtn = document.querySelector('.carousel-arrow.left');
+    const rightBtn = document.querySelector('.carousel-arrow.right');
+    let current = 0;
+
+    function updateCarousel() {
+        cards.forEach((card, i) => {
+            card.classList.remove('active', 'next', 'prev');
+        });
+        cards[current].classList.add('active');
+        cards[(current + 1) % cards.length].classList.add('next');
+        cards[(current - 1 + cards.length) % cards.length].classList.add('prev');
+    }
+
+    leftBtn.addEventListener('click', () => {
+        current = (current - 1 + cards.length) % cards.length;
+        updateCarousel();
+    });
+    rightBtn.addEventListener('click', () => {
+        current = (current + 1) % cards.length;
+        updateCarousel();
+    });
+    updateCarousel();
+</script>
 
 </html>
